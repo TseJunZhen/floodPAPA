@@ -29,19 +29,60 @@ position: absolute;
 	margin-top:115px;
 	max-width: 650px;
 	margin-left:30px;
-	color:orange;
+	color:white;
 	font-size:35px;
 	font-family: "malgun gothic", simhei;
 	line-height: 40px;
 
+}
+.change_1{
+
+	position: absolute;
+	text-shadow: 1px 1px 2px #777;
+	margin-top:461px;
+	z-index:2;
+	margin-left:472px;
+	color:gray;
+	font-size:22px;
+}
+.change_1:active{
+	position: absolute;
+	margin-top:461px;
+	z-index:3;
+	margin-left:452px;
+	color:red;
+		font-family: "malgun gothic", simhei;
+	font-size:28px;
+}
+
+.change_2{
+
+	position: absolute;
+	text-shadow: 1px 1px 2px #777;
+	margin-top:461px;
+	z-index:2;
+	margin-left:162px;
+	color:gray;
+	font-size:22px;
+}
+.change_2:active{
+	position: absolute;
+	margin-top:464px;
+	z-index:3;
+	margin-left:162px;
+	color:red;
+		font-family: "malgun gothic", simhei;
+	font-size:22px;
 }
 
 </style>
 		
     <body>
         <div class="container-narrow">
-		<marquee class="test" direction="right"  scrollamount="10" >請注意！目前風速強度為<span id="temperature">0</span>，請提前做好撤離準備！</marquee>
-            <h2 class="muted">Flood PAPA｜跨界競賽 原型設計Demo</h2> 
+			<marquee class="test" direction="right"  scrollamount="10" >請注意！目前風速強度為<!--span id="temperature">0</span-->0級，請提前做好撤離準備！</marquee>
+            <a href="jsbin2.html" class="change_1" style="text-decoration: none">緊急聯絡人</a>
+			<a href="index.html" class="change_2" style="text-decoration: none">主畫面</a>
+			<h2 class="muted">Flood PAPA｜跨界競賽 原型設計Demo</h2> 
             <hr>
             <div id="contact-form">
 			
@@ -53,16 +94,16 @@ position: absolute;
 				<div style="position:absolute; left:230px; top:160px; width:150px; height:60px;font-size:20px;color:#FFFFFF;" >
 				<span id="temperature">0</span> <sup>o</sup>C<br>
 				<img id="t00" style="position:absolute; left:50px; top:-65px;"  src="images/light_green.png" />
-                <img class="container-set" id="t02s" style="position:absolute; left:355px; top:-1px;" src="images/switch_off.png" /><!--智慧化防水閘門-->
+                <img class="container-set" id="t02s" style="position:absolute; left:355px; top:-10px;" src="images/switch_off.png" /><!--智慧化防水閘門-->
 				
 				</div>
 				<!-- ----------------------------------------------------------------------------------------------------------------------------------------!-->
 				<!-- ----------------------------------------------------------------------------------------------------------------------------------------!-->
 				<!-- ----------------------------------------------------------------------------------------------------------------------------------------!-->
-				<div style="position:absolute; left:230px; top:197px; width:150px; height:60px;font-size:20px;color:#FFFFFF; background-image:src("");">
+				<div style="position:absolute; left:230px; top:199px; width:150px; height:60px;font-size:20px;color:#FFFFFF; background-image:src("");">
 					<span id="humidity">0</span> %
 					<img id="t01" style="position:absolute; left:50px; top:-65px;"  src="images/light_green.png" />
-                    <img class="container-set" id="t03s" style="position:absolute; left:355px; top:4px;" src="images/switch_off.png" /><!--感應停電燈-->
+                    <img class="container-set" id="t03s" style="position:absolute; left:355px; top:-6px;" src="images/switch_off.png" /><!--感應停電燈-->
 					
 				</div>
 				<!-- ----------------------------------------------------------------------------------------------------------------------------------------!-->
@@ -71,7 +112,7 @@ position: absolute;
 				<div style="position:absolute; left:230px; top:257px; width:150px; height:60px;font-size:20px;color:#FFFFFF; background-image:src("");">
 					<span >-</span> 級
 					<img id="t02" style="position:absolute; left:50px; top:-65px;"  src="images/light_green.png" />
-                    <img class="container-set" id="t01s" style="position:absolute; left:355px; top:-12px;" src="images/switch_off.png" /><!--電動樓梯升降梯-->
+                    <!--img class="container-set" id="t01s" style="position:absolute; left:355px; top:-12px;" src="images/switch_off.png" /><電動樓梯升降梯-->
 					
 				</div>
 				<!-- ----------------------------------------------------------------------------------------------------------------------------------------!-->
@@ -86,14 +127,17 @@ position: absolute;
 				<!-- ----------------------------------------------------------------------------------------------------------------------------------------!-->
 				<!-- ----------------------------------------------------------------------------------------------------------------------------------------!-->
 				<!-- ----------------------------------------------------------------------------------------------------------------------------------------!-->
-				<div style="position:absolute; left:230px; top:340px; width:150px; height:60px;font-size:20px;color:#FFFFFF; background-image:src("");">
-					<span id="rain">0</span> mm
+				<div style="position:absolute; left:230px; top:339px; width:150px; height:60px;font-size:20px;color:#FFFFFF; background-image:src("");">
+					<span class="rain_1" id="rain">0</span> mm
 					<img id="t04" style="position:absolute; left:50px; top:-65px;"  src="images/light_green.png" />
-					<!--img class="container-set" id="t04s" style="position:absolute; left:355px; top:-4px;"  src="images/switch_off.png" /--><!--智慧排水洗刷機-->
+					<img class="container-set" id="t04s" style="position:absolute; left:355px; top:-108px;"  src="images/switch_off.png" /><!--智慧排水洗刷機-->
+				
 				</div>
 				<!-- ----------------------------------------------------------------------------------------------------------------------------------------!-->
 				<!-- ----------------------------------------------------------------------------------------------------------------------------------------!-->
 				<!-- ----------------------------------------------------------------------------------------------------------------------------------------!-->
+								
+
 				</div>
            
 
@@ -142,7 +186,7 @@ _asyncToGenerator(regeneratorRuntime.mark(function _callee3() {
   }
   return musicNotes;
 }
-          boardReady('Llbd', (function () {
+          boardReady('vA6o', (function () {
             var ref = _asyncToGenerator(regeneratorRuntime.mark(function _callee2(board) {
               return regeneratorRuntime.wrap(function _callee2$(_context2) {
                 while (1) {
@@ -196,7 +240,7 @@ _asyncToGenerator(regeneratorRuntime.mark(function _callee3() {
 <!--------------------------------------------------------------------humidity------------------------------------------------------------------------------------------------>
 <!--------------------------------------------------------------------humidity------------------------------------------------------------------------------------------------>
 								  
-								  if(_context.t1>=45&&_context.t1<=69)
+								/*  if(_context.t1>=45&&_context.t1<=69)
 								  {
 								  document.getElementById("t01").src = "images/light_green.png";
 								  document.getElementById("t01s").src = "images/switch_off.png";
@@ -214,7 +258,7 @@ _asyncToGenerator(regeneratorRuntime.mark(function _callee3() {
 								  {
 								  document.getElementById("t01").src = "images/light_red.png";
 								  document.getElementById("t01s").src = "images/switch_on.png";
-								  }
+								  }*/
 <!--------------------------------------------------------------------wind------------------------------------------------------------------------------------------------>
 <!--------------------------------------------------------------------wind------------------------------------------------------------------------------------------------>
 <!--------------------------------------------------------------------wind------------------------------------------------------------------------------------------------>
@@ -240,8 +284,8 @@ _asyncToGenerator(regeneratorRuntime.mark(function _callee3() {
 <!--------------------------------------------------------------------rain------------------------------------------------------------------------------------------------>
 <!--------------------------------------------------------------------rain------------------------------------------------------------------------------------------------>
 <!--------------------------------------------------------------------rain------------------------------------------------------------------------------------------------>
-								  if(rainMM>=1) document.getElementById("t00s").src = "images/switch_on.png";
-								  else document.getElementById("t00s").src = "images/switch_off.png";
+								/*  if(rainMM>=1) document.getElementById("t00s").src = "images/switch_on.png";
+								  else document.getElementById("t00s").src = "images/switch_off.png";*/
 								  if(rainMM<=40)
 								  {
 								  document.getElementById("t04").src = "images/light_green.png";
