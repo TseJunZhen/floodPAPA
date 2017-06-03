@@ -79,8 +79,9 @@ position: absolute;
 		
     <body>
         <div class="container-narrow">
-			<marquee class="test" direction="left"  scrollamount="10" >請注意！目前淹水警戒為<!--span id="temperature">0</span-->0級，請提前做好撤離準備！</marquee>
-            <a href="jsbin2.html" class="change_1" style="text-decoration: none">緊急聯絡人</a>
+			<marquee class="test" direction="left"  scrollamount="10" style="color:yellow; display:inline;"><span id="warn">請注意！目前淹水警戒為<span id="copy_raindrop">0</span>，請提前做好撤離準備！</span></marquee>
+		
+            <a href="jsbin2.html" id="contact"; class="change_1" style="text-decoration: none">緊急聯絡人</a>
 			<a href="index.html" class="change_2" style="text-decoration: none">主畫面</a>
 			<h2 class="muted">Flood PAPA｜跨界競賽 原型設計Demo</h2> 
             <hr>
@@ -119,7 +120,7 @@ position: absolute;
 				<!-- ----------------------------------------------------------------------------------------------------------------------------------------!-->
 				<!-- ----------------------------------------------------------------------------------------------------------------------------------------!-->
 				<div style="position:absolute; left:230px; top:298px; width:150px; height:60px;font-size:20px;color:#FFFFFF; background-image:src("");">
-					<span id="rainLevel" >無</span> 
+					<span id="raindrop" >無</span> 
 					<img id="t03" style="position:absolute; left:50px; top:-65px;"  src="images/light_green.png" />
                     <!--img class="container-set" id="t00s" style="position:absolute; left:355px; top:-4px;" src="images/switch_off.png" /--><!--雨水撲滿-->
 					
@@ -156,7 +157,7 @@ position: absolute;
 function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } step("next"); }); }; }
 
 _asyncToGenerator(regeneratorRuntime.mark(function _callee3() {
-  var rain, dht, rainLevel;
+  var rain, dht, raindrop, copy_raindrop;
   return regeneratorRuntime.wrap(function _callee3$(_context3) {
     while (1) {
       switch (_context3.prev = _context3.next) {
@@ -194,11 +195,14 @@ _asyncToGenerator(regeneratorRuntime.mark(function _callee3() {
                     case 0:
                       board.systemReset();
                       board.samplingInterval = 250;
-                      rain = getPin(board, 14);//white
+                      rain = getPin(board, 15);//white
                       dht = getDht(board, 11);//chocolate
-					  led = getLed(board, 8);//green
+					  led = getLed(board, 8);//red
+					  led1 = getLed(board, 7);//orange
 					  buzzer = getBuzzer(board, 2);//yellow
                       rain.setMode(3);
+					  /*rainlevel = getPin(board, 15);
+					  rainlevel.setMode(2);*/
                       dht.read((function () {
                         var ref = _asyncToGenerator(regeneratorRuntime.mark(function _callee(evt) {
                           return regeneratorRuntime.wrap(function _callee$(_context) {
@@ -217,8 +221,8 @@ _asyncToGenerator(regeneratorRuntime.mark(function _callee3() {
 								
 								  
 								  
-								 rainMM = (Math.round((300*(1-_context.t2))/0.9));
-								 if(rainMM==333) rainMM=0;
+								 rainMM = Math.round(_context.t2*360);
+								 //if(rainMM==333) rainMM=0;
 <!--------------------------------------------------------------------temperature------------------------------------------------------------------------------------------------>
 <!--------------------------------------------------------------------temperature------------------------------------------------------------------------------------------------>
 <!--------------------------------------------------------------------temperature------------------------------------------------------------------------------------------------>
@@ -263,13 +267,13 @@ _asyncToGenerator(regeneratorRuntime.mark(function _callee3() {
 <!--------------------------------------------------------------------wind------------------------------------------------------------------------------------------------>
 <!--------------------------------------------------------------------wind------------------------------------------------------------------------------------------------>
 								  
-								  if(rainMM<=40)
+								  if(rainMM<160)
 								  {
 								  document.getElementById("t02").src = "images/light_green.png";
 								  document.getElementById("t02s").src = "images/switch_off.png";
 								  }
 								  
-								  else if((rainMM>=41&&rainMM<=200))
+								  else if((rainMM>=160&&rainMM<=200))
 								  {
 								  document.getElementById("t02").src = "images/light_green.png";
 								  document.getElementById("t02s").src = "images/switch_off.png";
@@ -284,37 +288,49 @@ _asyncToGenerator(regeneratorRuntime.mark(function _callee3() {
 <!--------------------------------------------------------------------rain------------------------------------------------------------------------------------------------>
 <!--------------------------------------------------------------------rain------------------------------------------------------------------------------------------------>
 <!--------------------------------------------------------------------rain------------------------------------------------------------------------------------------------>
+
 								/*  if(rainMM>=1) document.getElementById("t00s").src = "images/switch_on.png";
 								  else document.getElementById("t00s").src = "images/switch_off.png";*/
-								  if(rainMM<=40)
+								  if(rainMM<=160)
 								  {
 								  document.getElementById("t04").src = "images/light_green.png";
 								  document.getElementById("t04s").src = "images/switch_off.png";
-								  
+								  led1.off();
 								  led.off();
+								  document.getElementById("warn").style.display = "none";
 								  }
 								  
-								  else if((rainMM<=200))
+								  else if((rainMM<=195))
 								  {
+								  
 								  document.getElementById("t04").src = "images/light_yellow.png";
 								  document.getElementById("t04s").src = "images/switch_on.png";
+								  document.getElementById("warn").style.display = "inline";
+								  document.getElementById("contact").style.color = "orange";
 								  
+buzzer.play(buzzer_music([  {notes:["FS6","0","0","0"] , tempos:["10", "10", "8", "3"]}]).notes 
+,buzzer_music([  {notes:["FS6","0","0","0"] , tempos:["10", "10", "8", "3"]}]).tempos );
+								  led1.toggle();
 								  led.off();
 								  }
 								  
 								  else 
 								  {
+								 document.getElementById("warn").style.display = "inline";
+								document.getElementById("warn").style.color = "red";
+								 document.getElementById("contact").style.color = "red";
+								  led1.off();
 								  led.toggle();
 								  document.getElementById("t04").src = "images/light_red.png";
 								  document.getElementById("t04s").src = "images/switch_on.png";
 buzzer.play(buzzer_music([  {notes:["FS6","FS6","0","FS6"] , tempos:["8", "8", "8", "8"]}]).notes 
 ,buzzer_music([  {notes:["FS6","FS6","0","FS6"] , tempos:["8", "8", "8", "8"]}]).tempos );
 								  }
-<!--------------------------------------------------------------------rainLevel------------------------------------------------------------------------------------------------>
-<!--------------------------------------------------------------------rainLevel------------------------------------------------------------------------------------------------>
-<!--------------------------------------------------------------------rainLevel------------------------------------------------------------------------------------------------>
+<!--------------------------------------------------------------------raindrop------------------------------------------------------------------------------------------------>
+<!--------------------------------------------------------------------raindrop------------------------------------------------------------------------------------------------>
+<!--------------------------------------------------------------------raindrop------------------------------------------------------------------------------------------------>
 								  
-								  if(rainMM<40)
+								  if(rainMM<160)
 								  {
 								  document.getElementById("t03").src = "images/light_green.png";
 								  document.getElementById("t03s").src = "images/switch_off.png";
@@ -326,7 +342,7 @@ buzzer.play(buzzer_music([  {notes:["FS6","FS6","0","FS6"] , tempos:["8", "8", "
 								  document.getElementById("t03s").src = "images/switch_off.png";
 								  }
 								  
-								  else if((rainMM>	200))
+								  else if((rainMM >	195))
 								  {
 								  document.getElementById("t03").src = "images/light_red.png";
 								  document.getElementById("t03s").src = "images/switch_on.png";
@@ -347,22 +363,31 @@ buzzer.play(buzzer_music([  {notes:["FS6","FS6","0","FS6"] , tempos:["8", "8", "
 								  無
 								  3 2 1
 								  */
-								  if(rainMM<40) ;
-								  else  if(rainMM<=160)
+								  if(rainMM == 0) 
 								  {
-								  document.getElementById("rainLevel").innerHTML = 3+' 級';
+								  document.getElementById("raindrop").innerHTML = 3+' 級';
+								  document.getElementById("copy_raindrop").innerHTML = 3+'級';
 								  document.getElementById("t03s").src = "images/switch_off.png";
 								  
 								  }
-								  else if(rainMM<=200)
+								  else  if(rainMM<=160)
 								  {
-								  document.getElementById("rainLevel").innerHTML = 2+' 級';
+								  document.getElementById("raindrop").innerHTML = 3+' 級';
+								  document.getElementById("copy_raindrop").innerHTML = 3+'級';
+								  document.getElementById("t03s").src = "images/switch_off.png";
+								  
+								  }
+								  else if(rainMM<=195)
+								  {
+								  document.getElementById("raindrop").innerHTML = 2+' 級';
+								  document.getElementById("copy_raindrop").innerHTML = 2+'級';
 								  document.getElementById("t03s").src = "images/switch_off.png";
 								  }
 								  
 								  else
 								  {
-								  document.getElementById("rainLevel").innerHTML = 1+' 級';
+								  document.getElementById("raindrop").innerHTML = 1+' 級';
+								  document.getElementById("copy_raindrop").innerHTML = 1+'級';
 								  document.getElementById("t03s").src = "images/switch_on.png";
 								  }
 								  
