@@ -170,7 +170,7 @@ Released under the MIT license: http://jsbin.mit-license.org
 			 <div style="position:relative;  clear: both;">
 				<div class="slider_container">
 				   <div>
-					<img src="images/bg.png" alt="pure css3 slider" />
+					<img id="background" src="images/bg.png"  />
 						<!-- ----------------------------------------------------------------------------------------------------------------------------------------!-->
 						<!-- ----------------------------------------------------------------------------------------------------------------------------------------!-->
 						<!-- ----------------------------------------------------------------------------------------------------------------------------------------!-->
@@ -213,22 +213,21 @@ Released under the MIT license: http://jsbin.mit-license.org
 						<!-- ----------------------------------------------------------------------------------------------------------------------------------------!-->
 						<!-- ----------------------------------------------------------------------------------------------------------------------------------------!-->
 				
-					
 				   </div>
 				   <div>
-					  <img src="images/normal_1.png" alt="pure css3 slider" />
+					  <img id="pic1" src="images/normal_1.png"  />
 						<span id="temperature" style="position:absolute; left:350px; top:235px; width:150px; height:60px;font-size:150px;color:#FFFFFF;">0</span>
 				   </div>
 				   <div>
-					  <img src="images/normal_2.png" alt="pure css3 slider" />
+					  <img id="pic2" src="images/normal_2.png"  />
 						<span style="position:absolute; left:350px; top:235px; width:150px; height:60px;font-size:150px;color:#FFFFFF; " class="rain_1" id="rain">0</span> 
 				   </div>
 				   <div>
-					  <img src="images/normal_3.png" alt="pure css3 slider" />
+					  <img id="pic3" src="images/normal_3.png"  />
 						<span style="position:absolute; left:350px; top:260px; width:150px; height:60px;font-size:150px;color:#FFFFFF; " class="" id="">-</span> 
 				   </div>
 				   <div>
-					  <img src="images/normal_4.png" alt="pure css3 slider" />
+					  <img id="pic4" src="images/normal_4.png"  />
 						<span style="position:absolute; left:350px; top:260px; width:150px; height:60px;font-size:150px;color:#FFFFFF; " class="" id="">-</span> 
 				   </div>
 				</div>
@@ -332,13 +331,15 @@ Released under the MIT license: http://jsbin.mit-license.org
 																		case 4:
 																			_context.t2 = _context.sent;
 
-
+																			_context = 5;
 																			rainMM = Math.round(_context.t2 * 360 + 15);
+																			
 																			if (rainMM == 15) rainMM = 0;
 																			//if(rainMM==333) rainMM=0;
 																			<!--------------------------------------------------------------------temperature------------------------------------------------------------------------------------------------>
 																			<!--------------------------------------------------------------------temperature------------------------------------------------------------------------------------------------>
 																			<!--------------------------------------------------------------------temperature------------------------------------------------------------------------------------------------>
+																			
 																			if (_context.t0 >= 20 && _context.t0 <= 28) {
 																				document.getElementById("t00").src = "images/light_green.png";
 
@@ -346,7 +347,13 @@ Released under the MIT license: http://jsbin.mit-license.org
 																				document.getElementById("t00").src = "images/light_yellow.png";
 																			} else if (_context.t0 < 10 || _context.t0 > 32) {
 																				document.getElementById("t00").src = "images/light_red.png";
+																				document.getElementById("background").setAttribute('src', 'images/alert_main');
+																				document.getElementById("pic1").setAttribute('src', 'images/alert_1');
+																				document.getElementById("pic2").setAttribute('src', 'images/alert_2');
+																				document.getElementById("pic3").setAttribute('src', 'images/alert_3');
+																				document.getElementById("pic4").setAttribute('src', 'images/alert_4');
 																			}
+																			
 																			<!--------------------------------------------------------------------humidity------------------------------------------------------------------------------------------------>
 																			<!--------------------------------------------------------------------humidity------------------------------------------------------------------------------------------------>
 																			<!--------------------------------------------------------------------humidity------------------------------------------------------------------------------------------------>
@@ -370,6 +377,7 @@ Released under the MIT license: http://jsbin.mit-license.org
 																			  document.getElementById("t01").src = "images/light_red.png";
 																			  document.getElementById("t01s").src = "images/switch_on.png";
 																			  }*/
+																			  
 																			<!--------------------------------------------------------------------wind------------------------------------------------------------------------------------------------>
 																			<!--------------------------------------------------------------------wind------------------------------------------------------------------------------------------------>
 																			<!--------------------------------------------------------------------wind------------------------------------------------------------------------------------------------>
@@ -385,6 +393,7 @@ Released under the MIT license: http://jsbin.mit-license.org
 																				document.getElementById("t02s").src = "images/switch_on.png";
 
 																			}
+																			
 																			<!--------------------------------------------------------------------rain------------------------------------------------------------------------------------------------>
 																			<!--------------------------------------------------------------------rain------------------------------------------------------------------------------------------------>
 																			<!--------------------------------------------------------------------rain------------------------------------------------------------------------------------------------>
@@ -397,7 +406,8 @@ Released under the MIT license: http://jsbin.mit-license.org
 																				led1.off();
 																				led.off();
 																				document.getElementById("warn").style.display = "none";
-																			} else if ((rainMM <= 195)) {
+																			} 
+																			else if ((rainMM <= 195)) {
 
 																				document.getElementById("t04").src = "images/light_yellow.png";
 																				document.getElementById("t04s").src = "images/switch_on.png";
@@ -413,7 +423,9 @@ Released under the MIT license: http://jsbin.mit-license.org
 																				}]).tempos);
 																				led1.toggle();
 																				led.off();
-																			} else {
+																			} 
+																			else {
+																				
 																				document.getElementById("warn").style.display = "inline";
 																				document.getElementById("warn").style.color = "red";
 																				document.getElementById("contact").style.color = "red";
@@ -429,6 +441,7 @@ Released under the MIT license: http://jsbin.mit-license.org
 																					tempos: ["8", "8", "8", "8"]
 																				}]).tempos);
 																			}
+																			
 																			<!--------------------------------------------------------------------raindrop------------------------------------------------------------------------------------------------>
 																			<!--------------------------------------------------------------------raindrop------------------------------------------------------------------------------------------------>
 																			<!--------------------------------------------------------------------raindrop------------------------------------------------------------------------------------------------>
@@ -436,13 +449,16 @@ Released under the MIT license: http://jsbin.mit-license.org
 																			if (rainMM < 160) {
 																				document.getElementById("t03").src = "images/light_green.png";
 																				document.getElementById("t03s").src = "images/switch_off.png";
-																			} else if ((rainMM <= 200)) {
+																			} 
+																			else if ((rainMM <= 200)) {
 																				document.getElementById("t03").src = "images/light_yellow.png";
 																				document.getElementById("t03s").src = "images/switch_off.png";
-																			} else if ((rainMM > 195)) {
+																			} 
+																			else if ((rainMM > 195)) {
 																				document.getElementById("t03").src = "images/light_red.png";
 																				document.getElementById("t03s").src = "images/switch_on.png";
 																			}
+																			
 																			<!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 																			<!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 																			<!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
