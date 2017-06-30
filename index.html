@@ -170,9 +170,9 @@ Released under the MIT license: http://jsbin.mit-license.org
 			 <div style="position:relative;  clear: both;">
 				<div class="slider_container">
 				   <div>
-					<img id="background" src="images/bg.png"  />
+					<img id="background" src="images/alert_main.png"  />
 						<!-- ----------------------------------------------------------------------------------------------------------------------------------------!-->
-						<!-- ----------------------------------------------------------------------------------------------------------------------------------------!-->
+						<!-- ---------------------------------------------------------溫度---------------------------------------------------------------------------!-->
 						<!-- ----------------------------------------------------------------------------------------------------------------------------------------!-->
 						<span id="temperature" style="position:absolute; left:230px; top:125px; width:150px; height:60px;font-size:35px;color:#FFFFFF;">0</span>
 						<sup style="position:absolute; left:295px; top:130px;  width:150px; height:60px;font-size:20px;color:#FFFFFF;">°</sup> 
@@ -181,46 +181,51 @@ Released under the MIT license: http://jsbin.mit-license.org
 						<img class="container-set" id="t02s" style="position:absolute; left:600px; top:145px; width:60px; height:31.5px;" src="images/switch_off.png" /><!--智慧化防水閘門-->
 						
 						<!-- ----------------------------------------------------------------------------------------------------------------------------------------!-->
-						<!-- ----------------------------------------------------------------------------------------------------------------------------------------!-->
+						<!-- --------------------------------------------------------濕度----------------------------------------------------------------------------!-->
 						<!-- ----------------------------------------------------------------------------------------------------------------------------------------!-->
 						<span style="position:absolute; left:230px; top:165px; width:150px; height:60px;font-size:35px;color:#FFFFFF;" id="humidity">0</span> 
 						<span style="position:absolute; left:295px; top:165px;  font-size:35px;color:#FFFFFF; z-index:2;" >%</span><br>
 						<img id="t01" style="position:absolute; left:270px; top:100px; width:150px; height:150px;font-size:20px; "  src="images/light_green.png" />
 						<img class="container-set" id="t03s" style="position:absolute; left:600px; top:190px;width:60px; height:31.5px; " src="images/switch_off.png" /><!--感應停電燈-->
 						
+						<!-- ---------------------------------------------------------雨量------------------------------------------------------------------------------!-->
 						<!-- ----------------------------------------------------------------------------------------------------------------------------------------!-->
 						<!-- ----------------------------------------------------------------------------------------------------------------------------------------!-->
+						<span style="position:absolute; left:230px; top:230px; width:150px; height:60px;font-size:35px;color:#FFFFFF;" class="rain_1" id="rain">- -</span>
+						<span style="position:absolute; left:290px; top:230px; width:150px; height:60px;font-size:35px;color:#FFFFFF;" >mm</span><br>
+						<img id="t04" style="position:absolute; left:270px; top:248px; width:150px; height:150px; "  src="images/light_green.png" />
+						<img class="container-set" id="t04s" style="position:absolute; left:600px; top:230px; width:150px; height:31.5px;"  src="images/switch_off.png" /><!--智慧排水洗刷機-->
 						<!-- ----------------------------------------------------------------------------------------------------------------------------------------!-->
-						<span style="position:absolute; left:240px; top:230px; width:150px; height:60px;font-size:20px;color:#FFFFFF;" >- -</span> 級
-						<img id="t02" style="position:absolute; left:270px; top:170px; width:150px; height:150px;"  src="images/light_green.png" />
+						<!-- --------------------------------------------------------風速----------------------------------------------------------------------------!-->
+						<!-- ----------------------------------------------------------------------------------------------------------------------------------------!--> 
+						<span style="position:absolute; left:230px; top:272px; width:150px; height:60px;font-size:35px;color:#FFFFFF;visibility: hidden;" >0</span> 
+						<span style="position:absolute; left:290px; top:272px; width:150px; height:60px;font-size:34px;color:#FFFFFF;visibility: hidden;" >級</span> 
+						<img id="t02" style="position:absolute; left:270px; top:210px; width:150px; height:150px;visibility: hidden;"  src="images/light_green.png" />
 						<!--img class="container-set" id="t01s" style="position:absolute; left:355px; top:-12px;" src="images/switch_off.png" /><電動樓梯升降梯-->
-						
+						<!-- --------------------------------------------------------風速----------------------------------------------------------------------------!-->
+						<span style="position:absolute; left:230px; top:272px; width:150px; height:60px;font-size:35px;color:#FFFFFF;visibility: visible;" >16</span> 
+						<span style="position:absolute; left:275px; top:272px; width:150px; height:60px;font-size:25px;color:#FFFFFF;" >μg/m</span> 
+						<img id="t02" style="position:absolute; left:270px; top:210px; width:150px; height:150px;visibility: visible;"  src="images/light_green.png" />
 						<!-- ----------------------------------------------------------------------------------------------------------------------------------------!-->
+						<!-- --------------------------------------------------------淹水----------------------------------------------------------------------------!-->
 						<!-- ----------------------------------------------------------------------------------------------------------------------------------------!-->
-						<!-- ----------------------------------------------------------------------------------------------------------------------------------------!-->
-						<span style="position:absolute; left:240px; top:272px; width:150px; height:60px;font-size:20px;color:#FFFFFF;" id="raindrop" >無</span> 
-						<img id="t03" style="position:absolute; left:270px; top:210px; width:150px; height:150px;"  src="images/light_green.png" />
+						<span style="position:absolute; left:230px; top:310px; width:150px; height:60px;font-size:35px;color:#FFFFFF;" id="raindrop" >- -</span> 
+						<span style="position:absolute; left:290px; top:310px;  font-size:35px;color:#FFFFFF; z-index:2;" >級</span> 
+						<img id="t03"  style="position:absolute; left:270px; top:170px; width:150px; height:150px;"   src="images/light_green.png" />
 						<!--img class="container-set" id="t00s" style="position:absolute; left:355px; top:-4px;" src="images/switch_off.png" /--><!--雨水撲滿-->
 						
 						<!-- ----------------------------------------------------------------------------------------------------------------------------------------!-->
 						<!-- ----------------------------------------------------------------------------------------------------------------------------------------!-->
 						<!-- ----------------------------------------------------------------------------------------------------------------------------------------!-->
-						<span style="position:absolute; left:230px; top:310px; width:150px; height:60px;font-size:35px;color:#FFFFFF; " class="rain_1" id="rain">0</span> 
-						<span style="position:absolute; left:290px; top:310px;  font-size:35px;color:#FFFFFF; z-index:2;" >mm</span><br>
-						<img id="t04" style="position:absolute; left:270px; top:248px; width:150px; height:150px; "  src="images/light_green.png" />
-						<img class="container-set" id="t04s" style="position:absolute; left:600px; top:230px; width:150px; height:31.5px;"  src="images/switch_off.png" /><!--智慧排水洗刷機-->
-						<!-- ----------------------------------------------------------------------------------------------------------------------------------------!-->
-						<!-- ----------------------------------------------------------------------------------------------------------------------------------------!-->
-						<!-- ----------------------------------------------------------------------------------------------------------------------------------------!-->
-				
+			
 				   </div>
 				   <div>
 					  <img id="pic1" src="images/normal_1.png"  />
-						<span id="temperature" style="position:absolute; left:350px; top:235px; width:150px; height:60px;font-size:150px;color:#FFFFFF;">0</span>
+						<span id="temperature2" style="position:absolute; left:350px; top:235px; width:150px; height:60px;font-size:150px;color:#FFFFFF;">0</span>
 				   </div>
 				   <div>
 					  <img id="pic2" src="images/normal_2.png"  />
-						<span style="position:absolute; left:350px; top:235px; width:150px; height:60px;font-size:150px;color:#FFFFFF; " class="rain_1" id="rain">0</span> 
+						<span style="position:absolute; left:350px; top:235px; width:150px; height:60px;font-size:150px;color:#FFFFFF; " class="rain_1" id="rain1">0</span> 
 				   </div>
 				   <div>
 					  <img id="pic3" src="images/normal_3.png"  />
@@ -233,299 +238,281 @@ Released under the MIT license: http://jsbin.mit-license.org
 				</div>
 			 </div>
 		  </div>
-		  <hr>
 		  <div class="footer" ;>
-			 <p>Copyright &copy; 2017 No.69 YYY隊｜國立臺北科技大學 互動所 林郁蓉 王以涵、建都所 林穎鴻、資工系 黃子洋 徐俊振</p>
+			 <p style="position:absolute; top:790px">Copyright &copy; 2017 No.69 YYY隊｜國立臺北科技大學 互動所 林郁蓉 王以涵、建都所 林穎鴻、資工系 黃子洋 徐俊振</p>
 		  </div>
 	   </div>
 
 		<script id="jsbin-javascript">
 		var rainMM = 0;
 		'use strict';
-		function _asyncToGenerator(fn) {
-			return function () {
-				var gen = fn.apply(this, arguments);
-				return new Promise(function (resolve, reject) {
-					function step(key, arg) {
-						try {
-							var info = gen[key](arg);
-							var value = info.value;
-						} catch (error) {
-							reject(error);
-							return;
-						}
-						if (info.done) {
-							resolve(value);
-						} else {
-							Promise.resolve(value).then(function (value) {
-								step("next", value);
-							}, function (err) {
-								step("throw", err);
-							});
-						}
-					}
-					step("next");
-				});
-			};
-		}
-
-		_asyncToGenerator(regeneratorRuntime.mark(function _callee3() {
-			var rain, dht, raindrop, copy_raindrop;
-			return regeneratorRuntime.wrap(function _callee3$(_context3) {
-				while (1) {
-					switch (_context3.prev = _context3.next) {
-						case 0:
-							function buzzer_music(m) {
-								var musicNotes = {};
-								musicNotes.notes = [];
-								musicNotes.tempos = [];
-								if (m[0].notes.length > 1) {
-									for (var i = 0; i < m.length; i++) {
-										if (Array.isArray(m[i].notes)) {
-											var cn = musicNotes.notes.concat(m[i].notes);
-											musicNotes.notes = cn;
-										} else {
-											musicNotes.notes.push(m[i].notes);
-										}
-										if (Array.isArray(m[i].tempos)) {
-											var ct = musicNotes.tempos.concat(m[i].tempos);
-											musicNotes.tempos = ct;
-										} else {
-											musicNotes.tempos.push(m[i].tempos);
-										}
-									}
-								} else {
-									musicNotes.notes = [m[0].notes];
-									musicNotes.tempos = [m[0].tempos];
-								}
-								return musicNotes;
-							}
-							boardReady('vA6o', (function () {
-								var ref = _asyncToGenerator(regeneratorRuntime.mark(function _callee2(board) {
-									return regeneratorRuntime.wrap(function _callee2$(_context2) {
-										while (1) {
-											switch (_context2.prev = _context2.next) {
-												case 0:
-													board.systemReset();
-													board.samplingInterval = 250;
-													rain = getPin(board, 15); //white
-													dht = getDht(board, 11); //chocolate
-													led = getLed(board, 8); //red
-													led1 = getLed(board, 7); //orange
-													buzzer = getBuzzer(board, 2); //yellow
-													rain.setMode(3);
-													/*rainlevel = getPin(board, 15);
-													rainlevel.setMode(2);*/
-													dht.read((function () {
-														var ref = _asyncToGenerator(regeneratorRuntime.mark(function _callee(evt) {
-															return regeneratorRuntime.wrap(function _callee$(_context) {
-																while (1) {
-																	switch (_context.prev = _context.next) {
-																		case 0:
-
-																			_context.t0 = dht.temperature;
-																			_context.t1 = dht.humidity;
-																			_context.next = 4;
-																			return rain.read();
-
-																		case 4:
-																			_context.t2 = _context.sent;
-
-																			_context = 5;
-																			rainMM = Math.round(_context.t2 * 360 + 15);
-																			
-																			if (rainMM == 15) rainMM = 0;
-																			//if(rainMM==333) rainMM=0;
-																			<!--------------------------------------------------------------------temperature------------------------------------------------------------------------------------------------>
-																			<!--------------------------------------------------------------------temperature------------------------------------------------------------------------------------------------>
-																			<!--------------------------------------------------------------------temperature------------------------------------------------------------------------------------------------>
-																			
-																			if (_context.t0 >= 20 && _context.t0 <= 28) {
-																				document.getElementById("t00").src = "images/light_green.png";
-
-																			} else if ((_context.t0 >= 10 && _context.t0 <= 19) || (_context.t0 >= 29 && _context.t0 <= 32)) {
-																				document.getElementById("t00").src = "images/light_yellow.png";
-																			} else if (_context.t0 < 10 || _context.t0 > 32) {
-																				document.getElementById("t00").src = "images/light_red.png";
-																				document.getElementById("background").setAttribute('src', 'images/alert_main');
-																				document.getElementById("pic1").setAttribute('src', 'images/alert_1');
-																				document.getElementById("pic2").setAttribute('src', 'images/alert_2');
-																				document.getElementById("pic3").setAttribute('src', 'images/alert_3');
-																				document.getElementById("pic4").setAttribute('src', 'images/alert_4');
-																			}
-																			
-																			<!--------------------------------------------------------------------humidity------------------------------------------------------------------------------------------------>
-																			<!--------------------------------------------------------------------humidity------------------------------------------------------------------------------------------------>
-																			<!--------------------------------------------------------------------humidity------------------------------------------------------------------------------------------------>
-
-																			/*  if(_context.t1>=45&&_context.t1<=69)
-																			  {
-																			  document.getElementById("t01").src = "images/light_green.png";
-																			  document.getElementById("t01s").src = "images/switch_off.png";
-																			  }
-																			  
-																			  else if((_context.t1>=40&&_context.t1<=44)||(_context.t1>=70&&_context.t1<=85))
-																			  {
-																			  document.getElementById("t01").src = "images/light_yellow.png";
-																			  document.getElementById("t01s").src = "images/switch_on.png";
-																			  
-
-																			  }
-																			  
-																			  else if((_context.t1>=0&&_context.t1<=39)||(_context.t1>=86&&_context.t1<=100))
-																			  {
-																			  document.getElementById("t01").src = "images/light_red.png";
-																			  document.getElementById("t01s").src = "images/switch_on.png";
-																			  }*/
-																			  
-																			<!--------------------------------------------------------------------wind------------------------------------------------------------------------------------------------>
-																			<!--------------------------------------------------------------------wind------------------------------------------------------------------------------------------------>
-																			<!--------------------------------------------------------------------wind------------------------------------------------------------------------------------------------>
-
-																			if (rainMM < 160) {
-																				document.getElementById("t02").src = "images/light_green.png";
-																				document.getElementById("t02s").src = "images/switch_off.png";
-																			} else if ((rainMM >= 160 && rainMM <= 200)) {
-																				document.getElementById("t02").src = "images/light_green.png";
-																				document.getElementById("t02s").src = "images/switch_off.png";
-																			} else if ((rainMM > 200)) {
-																				document.getElementById("t02").src = "images/light_green.png";
-																				document.getElementById("t02s").src = "images/switch_on.png";
-
-																			}
-																			
-																			<!--------------------------------------------------------------------rain------------------------------------------------------------------------------------------------>
-																			<!--------------------------------------------------------------------rain------------------------------------------------------------------------------------------------>
-																			<!--------------------------------------------------------------------rain------------------------------------------------------------------------------------------------>
-
-																			/*  if(rainMM>=1) document.getElementById("t00s").src = "images/switch_on.png";
-																			  else document.getElementById("t00s").src = "images/switch_off.png";*/
-																			if (rainMM <= 160) {
-																				document.getElementById("t04").src = "images/light_green.png";
-																				document.getElementById("t04s").src = "images/switch_off.png";
-																				led1.off();
-																				led.off();
-																				document.getElementById("warn").style.display = "none";
-																			} 
-																			else if ((rainMM <= 195)) {
-
-																				document.getElementById("t04").src = "images/light_yellow.png";
-																				document.getElementById("t04s").src = "images/switch_on.png";
-																				document.getElementById("warn").style.display = "inline";
-																				document.getElementById("contact").style.color = "orange";
-
-																				buzzer.play(buzzer_music([{
-																					notes: ["FS6", "0", "0", "0"],
-																					tempos: ["10", "10", "8", "3"]
-																				}]).notes, buzzer_music([{
-																					notes: ["FS6", "0", "0", "0"],
-																					tempos: ["10", "10", "8", "3"]
-																				}]).tempos);
-																				led1.toggle();
-																				led.off();
-																			} 
-																			else {
-																				
-																				document.getElementById("warn").style.display = "inline";
-																				document.getElementById("warn").style.color = "red";
-																				document.getElementById("contact").style.color = "red";
-																				led1.off();
-																				led.toggle();
-																				document.getElementById("t04").src = "images/light_red.png";
-																				document.getElementById("t04s").src = "images/switch_on.png";
-																				buzzer.play(buzzer_music([{
-																					notes: ["FS6", "FS6", "0", "FS6"],
-																					tempos: ["8", "8", "8", "8"]
-																				}]).notes, buzzer_music([{
-																					notes: ["FS6", "FS6", "0", "FS6"],
-																					tempos: ["8", "8", "8", "8"]
-																				}]).tempos);
-																			}
-																			
-																			<!--------------------------------------------------------------------raindrop------------------------------------------------------------------------------------------------>
-																			<!--------------------------------------------------------------------raindrop------------------------------------------------------------------------------------------------>
-																			<!--------------------------------------------------------------------raindrop------------------------------------------------------------------------------------------------>
-
-																			if (rainMM < 160) {
-																				document.getElementById("t03").src = "images/light_green.png";
-																				document.getElementById("t03s").src = "images/switch_off.png";
-																			} 
-																			else if ((rainMM <= 200)) {
-																				document.getElementById("t03").src = "images/light_yellow.png";
-																				document.getElementById("t03s").src = "images/switch_off.png";
-																			} 
-																			else if ((rainMM > 195)) {
-																				document.getElementById("t03").src = "images/light_red.png";
-																				document.getElementById("t03s").src = "images/switch_on.png";
-																			}
-																			
-																			<!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-																			<!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-																			<!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-
-
-																			document.getElementById("temperature").innerHTML = _context.t0;
-																			document.getElementById("humidity").innerHTML = _context.t1;
-																			document.getElementById("rain").innerHTML = rainMM;
-
-
-																			/*
-																			無
-																			3 2 1
-																			*/
-																			if (rainMM == 0) {
-																				document.getElementById("raindrop").innerHTML = 3 + ' 級';
-																				document.getElementById("copy_raindrop").innerHTML = 3 + '級';
-																				document.getElementById("t03s").src = "images/switch_off.png";
-
-																			} else if (rainMM <= 160) {
-																				document.getElementById("raindrop").innerHTML = 3 + ' 級';
-																				document.getElementById("copy_raindrop").innerHTML = 3 + '級';
-																				document.getElementById("t03s").src = "images/switch_off.png";
-
-																			} else if (rainMM <= 195) {
-																				document.getElementById("raindrop").innerHTML = 2 + ' 級';
-																				document.getElementById("copy_raindrop").innerHTML = 2 + '級';
-																				document.getElementById("t03s").src = "images/switch_off.png";
-																			} else {
-																				document.getElementById("raindrop").innerHTML = 1 + ' 級';
-																				document.getElementById("copy_raindrop").innerHTML = 1 + '級';
-																				document.getElementById("t03s").src = "images/switch_on.png";
-																			}
-
-																		case 6:
-																		case 'end':
-																			return _context.stop();
-																	}
-																}
-															}, _callee, this);
-														}));
-
-														return function (_x2) {
-															return ref.apply(this, arguments);
-														};
-													})(), 1000);
-
-												case 6:
-												case 'end':
-													return _context2.stop();
-											}
-										}
-									}, _callee2, this);
-								}));
-
-								return function (_x) {
-									return ref.apply(this, arguments);
-								};
-							})());
-
-						case 1:
-						case 'end':
-							return _context3.stop();
-					}
-				}
-			}, _callee3, this);
-		}))();
+		
+function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } step("next"); }); }; }
+_asyncToGenerator(regeneratorRuntime.mark(function _callee3() {
+  var rain, dht, raindrop, copy_raindrop;
+  return regeneratorRuntime.wrap(function _callee3$(_context3) {
+    while (1) {
+      switch (_context3.prev = _context3.next) {
+        case 0:
+			function buzzer_music(m) {
+  var musicNotes = {};
+  musicNotes.notes = [];
+  musicNotes.tempos = [];
+  if (m[0].notes.length > 1) {
+    for (var i = 0; i < m.length; i++) {
+      if (Array.isArray(m[i].notes)) {
+        var cn = musicNotes.notes.concat(m[i].notes);
+        musicNotes.notes = cn;
+      } else {
+        musicNotes.notes.push(m[i].notes);
+      }
+      if (Array.isArray(m[i].tempos)) {
+        var ct = musicNotes.tempos.concat(m[i].tempos);
+        musicNotes.tempos = ct;
+      } else {
+        musicNotes.tempos.push(m[i].tempos);
+      }
+    }
+  } else {
+    musicNotes.notes = [m[0].notes];
+    musicNotes.tempos = [m[0].tempos];
+  }
+  return musicNotes;
+}
+          boardReady('vA6o', (function () {
+            var ref = _asyncToGenerator(regeneratorRuntime.mark(function _callee2(board) {
+              return regeneratorRuntime.wrap(function _callee2$(_context2) {
+                while (1) {
+                  switch (_context2.prev = _context2.next) {
+                    case 0:
+                      board.systemReset();
+                      board.samplingInterval = 250;
+                      rain = getPin(board, 15);//white
+                      dht = getDht(board, 11);//chocolate
+					  led = getLed(board, 8);//red
+					  led1 = getLed(board, 7);//orange
+					  buzzer = getBuzzer(board, 2);//yellow
+                      rain.setMode(3);
+					  /*rainlevel = getPin(board, 15);
+					  rainlevel.setMode(2);*/
+                      dht.read((function () {
+                        var ref = _asyncToGenerator(regeneratorRuntime.mark(function _callee(evt) {
+                          return regeneratorRuntime.wrap(function _callee$(_context) {
+                            while (1) {
+                              switch (_context.prev = _context.next) {
+                                case 0:
+                                  
+                                  _context.t0 = dht.temperature;
+								  _context.t1 = dht.humidity;
+                                  _context.next = 4;
+                                  return rain.read();
+                                case 4:
+                                  _context.t2 = _context.sent;
+								 
+								
+								  
+								  
+								 rainMM = Math.round(_context.t2*360+15);
+					      			 if(rainMM==15)	rainMM=0;
+								 //if(rainMM==333) rainMM=0;
+<!--------------------------------------------------------------------temperature------------------------------------------------------------------------------------------------>
+<!--------------------------------------------------------------------temperature------------------------------------------------------------------------------------------------>
+<!--------------------------------------------------------------------temperature------------------------------------------------------------------------------------------------>
+								  if(_context.t0>=20&&_context.t0<=28)
+								  {
+								  document.getElementById("t00").src = "images/light_green.png";
+								  
+								  }
+								  else if((_context.t0>=10&&_context.t0<=19)||(_context.t0>=29&&_context.t0<=32))
+								  {
+								  document.getElementById("t00").src = "images/light_yellow.png";
+								 }
+								  
+								  else if(_context.t0<10||_context.t0>32)
+								  {
+								  document.getElementById("t00").src = "images/light_red.png";
+								  }
+<!--------------------------------------------------------------------humidity------------------------------------------------------------------------------------------------>
+<!--------------------------------------------------------------------humidity------------------------------------------------------------------------------------------------>
+<!--------------------------------------------------------------------humidity------------------------------------------------------------------------------------------------>
+								  
+								/*  if(_context.t1>=45&&_context.t1<=69)
+								  {
+								  document.getElementById("t01").src = "images/light_green.png";
+								  document.getElementById("t01s").src = "images/switch_off.png";
+								  }
+								  
+								  else if((_context.t1>=40&&_context.t1<=44)||(_context.t1>=70&&_context.t1<=85))
+								  {
+								  document.getElementById("t01").src = "images/light_yellow.png";
+								  document.getElementById("t01s").src = "images/switch_on.png";
+								  
+								  }
+								  
+								  else if((_context.t1>=0&&_context.t1<=39)||(_context.t1>=86&&_context.t1<=100))
+								  {
+								  document.getElementById("t01").src = "images/light_red.png";
+								  document.getElementById("t01s").src = "images/switch_on.png";
+								  }*/
+<!--------------------------------------------------------------------wind------------------------------------------------------------------------------------------------>
+<!--------------------------------------------------------------------wind------------------------------------------------------------------------------------------------>
+<!--------------------------------------------------------------------wind------------------------------------------------------------------------------------------------>
+								  
+								  if(rainMM<160)
+								  {
+								  document.getElementById("t02").src = "images/light_green.png";
+								  document.getElementById("t02s").src = "images/switch_off.png";
+								  }
+								  
+								  else if((rainMM>=160&&rainMM<=200))
+								  {
+								  document.getElementById("t02").src = "images/light_green.png";
+								  document.getElementById("t02s").src = "images/switch_off.png";
+								  }
+								  
+								  else if((rainMM>200))
+								  {
+								  document.getElementById("t02").src = "images/light_green.png";
+								  document.getElementById("t02s").src = "images/switch_on.png";
+								  
+								  }
+<!--------------------------------------------------------------------rain------------------------------------------------------------------------------------------------>
+<!--------------------------------------------------------------------rain------------------------------------------------------------------------------------------------>
+<!--------------------------------------------------------------------rain------------------------------------------------------------------------------------------------>
+								/*  if(rainMM>=1) document.getElementById("t00s").src = "images/switch_on.png";
+								  else document.getElementById("t00s").src = "images/switch_off.png";*/
+								  if(rainMM<=160)
+								  {
+								  document.getElementById("t04").src = "images/light_green.png";
+								  document.getElementById("t04s").src = "images/switch_off.png";
+								  led1.off();
+								  led.off();
+								  document.getElementById("warn").style.display = "none";
+								  }
+								  
+								  else if((rainMM<=195))
+								  {
+								  
+								  document.getElementById("t04").src = "images/light_yellow.png";
+								  document.getElementById("t04s").src = "images/switch_on.png";
+								  document.getElementById("warn").style.display = "inline";
+								  document.getElementById("contact").style.color = "orange";
+								  
+buzzer.play(buzzer_music([  {notes:["FS6","0","0","0"] , tempos:["10", "10", "8", "3"]}]).notes 
+,buzzer_music([  {notes:["FS6","0","0","0"] , tempos:["10", "10", "8", "3"]}]).tempos );
+								  led1.toggle();
+								  led.off();
+								  }
+								  
+								  else 
+								  {
+								 document.getElementById("warn").style.display = "inline";
+								document.getElementById("warn").style.color = "red";
+								 document.getElementById("contact").style.color = "red";
+								  led1.off();
+								  led.toggle();
+								  document.getElementById("t04").src = "images/light_red.png";
+								  document.getElementById("t04s").src = "images/switch_on.png";
+buzzer.play(buzzer_music([  {notes:["FS6","FS6","0","FS6"] , tempos:["8", "8", "8", "8"]}]).notes 
+,buzzer_music([  {notes:["FS6","FS6","0","FS6"] , tempos:["8", "8", "8", "8"]}]).tempos );
+								  }
+<!--------------------------------------------------------------------raindrop------------------------------------------------------------------------------------------------>
+<!--------------------------------------------------------------------raindrop------------------------------------------------------------------------------------------------>
+<!--------------------------------------------------------------------raindrop------------------------------------------------------------------------------------------------>
+								  
+								  if(rainMM<160)
+								  {
+								  document.getElementById("t03").src = "images/light_green.png";
+								  document.getElementById("t03s").src = "images/switch_off.png";
+								  }
+								  
+								  else if((rainMM<=200))
+								  {
+								  document.getElementById("t03").src = "images/light_yellow.png";
+								  document.getElementById("t03s").src = "images/switch_off.png";
+								  }
+								  
+								  else if((rainMM >	195))
+								  {
+								  document.getElementById("t03").src = "images/light_red.png";
+								  document.getElementById("t03s").src = "images/switch_on.png";
+								  }
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+									
+								  
+								  
+								  
+								  document.getElementById("temperature").innerHTML = _context.t0;
+								  document.getElementById("temperature2").innerHTML = _context.t0;
+								  document.getElementById("humidity").innerHTML =  _context.t1;
+								  document.getElementById("rain").innerHTML = rainMM;
+								  document.getElementById("rain1").innerHTML = rainMM;
+								  
+								  
+								  /*
+								  無
+								  3 2 1
+								  */
+								  if(rainMM == 0) 
+								  {
+								  document.getElementById("raindrop").innerHTML = 3;
+								  document.getElementById("copy_raindrop").innerHTML = 3;
+								  document.getElementById("t03s").src = "images/switch_off.png";
+								  
+								  }
+								  else  if(rainMM<=160)
+								  {
+								  document.getElementById("raindrop").innerHTML = 3;
+								  document.getElementById("copy_raindrop").innerHTML = 3;
+								  document.getElementById("t03s").src = "images/switch_off.png";
+								  
+								  }
+								  else if(rainMM<=195)
+								  {
+								  document.getElementById("raindrop").innerHTML = 2;
+								  document.getElementById("copy_raindrop").innerHTML = 2;
+								  document.getElementById("t03s").src = "images/switch_off.png";
+								  }
+								  
+								  else
+								  {
+								  document.getElementById("raindrop").innerHTML = 1;
+								  document.getElementById("copy_raindrop").innerHTML = 1;
+								  document.getElementById("t03s").src = "images/switch_on.png";
+								  }
+								  
+                                case 6:
+                                case 'end':
+                                  return _context.stop();
+                              }
+                            }
+                          }, _callee, this);
+                        }));
+                        return function (_x2) {
+                          return ref.apply(this, arguments);
+                        };
+                      })(), 1000);
+                    case 6:
+                    case 'end':
+                      return _context2.stop();
+                  }
+                }
+              }, _callee2, this);
+            }));
+            return function (_x) {
+              return ref.apply(this, arguments);
+            };
+          })());
+        case 1:
+        case 'end':
+          return _context3.stop();
+      }
+    }
+  }, _callee3, this);
+}))();
+   
 		</script>
 
 	</body>
