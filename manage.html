@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://bin.webduino.io
+
+Copyright (c) 2016 by anonymous (http://bin.webduino.io/gelof/1/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+    <head>
+        <title>Flood PAPA｜原型設計Demo</title>
+
+        <link rel="stylesheet" href="cssManage/bootstrap.css" media="screen" />
+        <link rel="stylesheet" href="cssManage/floodpapa.css"/>
+
+        <script src="js/jquery-3.1.1.min.js"></script>
+		<script src="js/jquery-3.1.1.min.js"></script>
+        
+  <script src="https://webduino.io/components/webduino-js/dist/webduino-all.min.js"></script>
+  <script src="https://blockly.webduino.io/webduino-blockly.js"></script>
+  <script src="https://blockly.webduino.io/lib/runtime.min.js"></script>
+  <script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script>
+
+</head>
+<script>
+function myMap() {
+var mapOptions = {
+    center: new google.maps.LatLng(51.5, -0.12),
+    zoom: 10,
+    mapTypeId: google.maps.MapTypeId.HYBRID
+}
+var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+}
+</script>
+<style>
+#gmap_canvas
+{
+position:absolute;
+margin-left:440px;
+
+margin-top:-380px;
+}
+
+
+.red{
+		opacity:0;
+background-color:white;
+	background-color:red;
+position:absolute;
+z-index:10;
+margin-left:750px;
+margin-top:240px;
+  width: 150px;
+  height: 150px;
+  background-size: 150px 150px;
+
+  background-repeat:no-repeat;
+}
+.orange{background-color:white;
+
+	opacity:0;
+	background-color:yellow;
+position:absolute;
+z-index:10;
+margin-left:590px;
+margin-top:265px;
+  width: 150px;
+  height: 150px;
+  background-size: 150px 150px;
+
+  background-repeat:no-repeat;
+}
+.green{background-color:white;
+
+		opacity:0;
+
+	background-color:green;
+position:absolute;
+z-index:10;
+margin-left:460px;
+margin-top:205px;
+
+  width: 150px;
+  height: 150px;
+  background-size: 150px 150px;
+
+  background-repeat:no-repeat;
+}
+</style>
+<script>
+
+
+	function myFunction_1() {
+		 document.getElementById("map_img1").style.display = "none";
+		 document.getElementById("map_img2").style.display = "none";
+		 document.getElementById("map_img3").style.display = "";
+		}
+			function myFunction_2() {
+		 document.getElementById("map_img1").style.display = "none";
+		 document.getElementById("map_img2").style.display = "";
+		 document.getElementById("map_img3").style.display = "none";
+		}
+			function myFunction_3() {
+		 document.getElementById("map_img1").style.display = "";
+		 document.getElementById("map_img2").style.display = "none";
+		 document.getElementById("map_img3").style.display = "none";
+		}
+	</script>
+    <body>
+        <div class="container-narrow">
+		
+        		<h2 class="muted">Flood PAPA｜跨界競賽 原型設計Demo</h2> 
+            <hr>
+            <div id="contact-form">
+			
+                <div style="position:relative;  clear: both;">
+				<a class="green" onclick="myFunction_1()"></a>
+<a class="orange" onclick="myFunction_2()"></a>
+<a class="red" onclick="myFunction_3()"></a>
+                    <img id="map_img1" src="images/manager_bg_1.png" style="display:"";" alt=""/>
+					<img id="map_img2" src="images/manager_bg_2.png" style="display:none;" alt=""/>
+					<img id="map_img3" src="images/manager_bg_3.png" style="display:none;" alt=""/>
+					
+<div id='gmap_canvas' style='height:220px;width:440px;'></div>
+				</div>
+
+<script type='text/javascript'>
+function init_map()
+{
+
+var myOptions = 
+{zoom:13,center:new google.maps.LatLng(25.0422329,121.53549739999994),mapTypeId: google.maps.MapTypeId.ROADMAP};
+map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);
+marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(25.0422329,121.53549739999994)});
+infowindow = new google.maps.InfoWindow({content:'<strong>Title</strong><br>國立台北科技大學<br>'});
+google.maps.event.addListener(marker, 'click', function(){infowindow.open(map,marker);});
+infowindow.open(map,marker);
+    setInterval(function(){
+                if (beachMarker2.getVisible()) {
+                    beachMarker2.setVisible(false);
+                } else {
+                    beachMarker2.setVisible(true);
+                }
+            }, 2000);
+ var image = 'images/yellowradar.png';
+  var myLatLng = new google.maps.LatLng(25.0393929,121.54449739999994); //or wherever you want the marker placed
+  var beachMarker2 = new google.maps.Marker({
+      position: myLatLng,
+      map: map,
+      icon: image
+  });
+      setInterval(function(){
+                if (beachMarker3.getVisible()) {
+                    beachMarker3.setVisible(false);
+                } else {
+                    beachMarker3.setVisible(true);
+                }
+            }, 300);
+   var image2 = 'images/redradar.png';
+  var myLatLng2 = new google.maps.LatLng(25.0593929,121.55549739999994); //or wherever you want the marker placed
+  var beachMarker3 = new google.maps.Marker({
+      position: myLatLng2,
+      map: map,
+      icon: image2
+  });
+    setInterval(function(){
+                if (beachMarker.getVisible()) {
+                    beachMarker.setVisible(false);
+                } else {
+                    beachMarker.setVisible(true);
+                }
+            }, 52000);
+			
+  var image3 = 'images/greenradar.png';
+  var myLatLng3 = new google.maps.LatLng(25.0393929,121.51549739999994); //or wherever you want the marker placed
+  var beachMarker = new google.maps.Marker({
+      position: myLatLng3,
+      map: map,
+      icon: image3
+  });
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+}
+
+google.maps.event.addDomListener(window, 'load', init_map);
+
+
+</script>           
+
+
+           
+        </div> 
+		<hr>
+		 <div class="footer" ;>
+                <p>Copyright &copy; 2017 No.69 YYY隊｜國立臺北科技大學 互動所 林郁蓉 王以涵、建都所 林穎鴻、資工系 黃子洋 徐俊振</p>
+            </div>
+        </div> 
+
+
+
+</body>
+    
+
+
+
+
+
+</html>
+
+

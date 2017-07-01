@@ -1,0 +1,19 @@
+html {
+  background: #000;
+  	/*url(http://cdn.wallpapersafari.com/85/31/YLsu5b.jpg) ;
+background-color:#000000;*/
+}
+body {
+  margin: 0 auto;
+
+}
+.container{
+
+  max-width: 1280px;
+  max-height: 1653px;
+	margin: 0 auto;
+}
+img {
+	position:absolute;
+	top:100px;
+}
